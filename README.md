@@ -35,6 +35,18 @@
 ( 所以用 params 時一定要用 name )
 
 一定要去 path 可以用下面的作法
+  
+PS:
+  
+用 query 傳參數時，最好用 name 不要用 path
+
+( name 也比較方便，不會出錯，要用 path 路徑要寫正確)
+
+像是點進 Programmatic Navigation 程序化導航 時
+
+( 如果路徑沒寫好 )
+  
+如果直接點選 Path with Query 带查询参数 會連結失敗
 ```
     StringRouter() {
       this.$router.push("/pn/stringrouter");
@@ -49,7 +61,10 @@
       this.$router.push({ name: "withquery", query: { data: "something" } });
     },
     QueryWithPath() {
-      this.$router.push({ path: "withquery", query: { data: "something2" } });
+      this.$router.push({
+        path: "/pn/withquery",
+        query: { data: "something2" },
+      });
     },
 
     PreviousPage() {
