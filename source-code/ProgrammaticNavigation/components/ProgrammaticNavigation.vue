@@ -28,7 +28,10 @@ export default {
       this.$router.push({ name: "withquery", query: { data: "something" } });
     },
     QueryWithPath() {
-      this.$router.push({ path: "withquery", query: { data: "something2" } });
+      this.$router.push({
+        path: "/pn/withquery",
+        query: { data: "something2" },
+      });
     },
 
     PreviousPage() {
