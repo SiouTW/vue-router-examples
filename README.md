@@ -25,3 +25,42 @@
 原本 mounted 裡的程式並不會執行，
   
 這時需要使用 beforeRouteUpdate 來更新
+
+------
+
+### Programmatic Navigation (程序化導航)
+
+如果提供了 path ， params 會被忽略
+
+( 所以用 params 時一定要用 name )
+
+一定要去 path 可以用下面的作法
+```
+    StringRouter() {
+      this.$router.push("/pn/stringrouter");
+    },
+    ObjectRouter() {
+      this.$router.push({ path: "/pn/objectrouter" });
+    },
+    NamedRouter() {
+      this.$router.push({ name: "NamedRouter", params: { data: "from pn" } });
+    },
+    WithQuery() {
+      this.$router.push({ name: "withquery", query: { data: "something" } });
+    },
+    QueryWithPath() {
+      this.$router.push({ path: "withquery", query: { data: "something2" } });
+    },
+
+    PreviousPage() {
+      this.$router.go(-1);
+    },
+    NextPage() {
+      this.$router.go(1);
+    },
+
+    RouterReplace() {
+      this.$router.replace({ name: "routerreplace" });
+    },
+ ```
+  
