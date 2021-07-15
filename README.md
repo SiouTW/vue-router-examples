@@ -78,4 +78,10 @@ PS:
       this.$router.replace({ name: "routerreplace" });
     },
  ```
+  ------
+  
+  ### NamedViews 命名圖表
+  
+  要注意的重點是 router 裡的 index.js routes 的 component 要加 s
+
   
